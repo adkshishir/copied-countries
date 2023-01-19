@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.App {
+  font-size: 14px;
+}
+.active- {
+  font-size: 16px;
+}
+body {
+  scroll-behavior: smooth;
+  font-size: 1.3rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+iframe {
+  width: 800px;
+  height: 500px;
+  margin: 2rem;
+  border: none;
+  border-radius: 0.4rem;
+  float: right;
+}
+.earth {
+  scroll-behavior: unset;
+  width: 40vw;
+  height: 50vh;
+}
+.item-list {
+  width: fit-content;
+  /* height: 400px; */
+  padding: 1rem 0;
+  border: none;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgb(232, 253, 255);
+}
+.item-list:hover {
+  box-shadow: 1rem 1rem 3rem rgba(138, 214, 255, 0.597);
+}
+img {
+  width: 300px;
+  height: 200px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.item-list img {
+  /* margin-top: -7rem; */
+  padding-bottom: 1rem;
+}
+input {
+  display: block;
+  /* border: none; */
+  border-radius: 0.5rem;
+  width: 500px;
+  height: 40px;
+  padding: 0.5rem 1rem;
+  font-size: 1.4rem;
+  box-shadow: 0 0 5rem black;
+}
+.back {
+  background-color: white;
+  border: none;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  font-size: 1.3rem;
+  border: black double 5px;
+  border-radius: 0.5rem;
+}
+.back:hover {
+  color: white;
+  background-color: black;
+  box-shadow: 1rem 1rem 2rem #121212;
+  border: white double 5px;
+}
+.left-nav {
+  width: fit-content;
+}
+.grid-content {
+  display: grid;
+  margin: auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100vw;
+  gap: 3rem 0;
+  justify-content: center;
+}
+.active- {
+  background-color: #ababac;
+  width: 100vw;
+}
+@media (width<=1200px) {
+  .grid-content {
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+}
+@media (width<=700px) {
+  .grid-content {
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    padding-left: 1rem;
+  }
+}
+
+@media (width<=500px) {
+  iframe {
+    width: 100%;
+    height: 100vh;
+    margin: unset;
+    border-radius: unset;
+  }
+  .earth {
+    height: unset;
+    width: unset;
+  }
+  input {
+    width: 100%;
+  }
+  .grid-content {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    padding-left: 2rem;
+  }
+}
