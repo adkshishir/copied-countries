@@ -76,11 +76,13 @@ function App() {
     !values
       ? SET_API_ALL_COUNTRIES("https://restcountries.com/v3.1/all")
       : SET_API_ALL_COUNTRIES(`https://restcountries.com/v3.1/name/${values}`);
-  }, [values]);
-  useEffect(() => {
     findCountries();
-    setCollect(countriesData);
+    // setCollect(countriesData);
   }, [values]);
+  // useEffect(() => {
+
+  //   setCollect(countriesData);
+  // }, [API_ALL_COUNTRIES]);
 
   return (
     <div className="App">
