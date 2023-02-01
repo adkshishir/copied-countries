@@ -3,6 +3,7 @@ import "./App.css";
 import MainData from "./MainData";
 import ActiveCountry from "./ActiveCountry";
 import NavBar from "./NavBar";
+import Drop from "./Drop";
 
 function App() {
   const [countriesData, setCountriesData] = useState([]);
@@ -85,17 +86,31 @@ function App() {
   // }, [API_ALL_COUNTRIES]);
 
   return (
-    <div className="App">
+    <div className="">
       <NavBar />
       {/* {active ? (
         <iframe
+          width="300"
+          height="300"
           src="https://solarsystem.nasa.gov/gltf_embed/2393"
           className="earth"
         />
       ) : null} */}
 
-      {active && <input name="name" onChange={controlInput} value={values} />}
-      <div className="grid-content">
+      {active && (
+        <input
+          className="rounded-md  w-72 h-7 p-5  m-2 bg-slate-200 hover:bg-slate-300 focus:bg-slate-700 focus:outline-blue-500 focus:text-slate-50 text-lg "
+          name="name"
+          onChange={controlInput}
+          value={values}
+          placeholder="Nepal"
+        />
+      )}
+      {/* <div className="float-right mr-9 text-lg font-semibold dropdown ">
+        <Drop />
+      </div> */}
+
+      <div className=" grid grid-cols4 content-center  sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 ">
         {!active ? (
           <ActiveCountry onclick={makingActive} countryData={countryName} />
         ) : (

@@ -26,21 +26,36 @@ const ActiveCountry = ({ onclick, countryData }) => {
   }, [array]);
 
   return (
-    <div className="active-">
-      <button className="back" onClick={onclick}>
+    <div className=" bg-slate-100 w-screen p-3">
+      <button
+        className="bottom-3 bg-slate-300 px-3 py-2 font-sans font-bold rounded-md m-4 ml-1 hover:text-slate-600 hover:bg-slate-200"
+        onClick={onclick}
+      >
         back
       </button>
       <div>
-        <img src={countryData.flag} />
+        <img className="rounded-lg" src={countryData.flag} />
       </div>
       <div>
-        <div className="name-title">Country: {countryData.name}</div>
-        <div>Native Name:{nativeNam}</div>
-        <div>Region:{countryData.region}</div>
-        <div>
-          Sub Region:{countryData.subRegion ? countryData.subRegion : ""}
+        <div className="name-title">
+          <span className=" font-bold">Country:</span> {countryData.name}
         </div>
-        <div>Capital:{countryData.capital ? countryData.capital : ""}</div>
+        <div>
+          <span className="font-bold">Native Name:</span>
+          {nativeNam}
+        </div>
+        <div>
+          <span className="font-bold">Region:</span>
+          {countryData.region}
+        </div>
+        <div>
+          <span className="font-bold">Sub Region:</span>
+          {countryData.subRegion ? countryData.subRegion : ""}
+        </div>
+        <div className="mb-10">
+          <span className="font-bold ">Capital:</span>
+          {countryData.capital ? countryData.capital : ""}
+        </div>
       </div>
       <div>
         {/* <div>Top level Domain:</div>
@@ -50,12 +65,25 @@ const ActiveCountry = ({ onclick, countryData }) => {
 
       <div className="mapouter">
         <div className="gmap_canvas">
-          <div>
+          <div className="text-xl">
             {` Country ${countryData.name} in google map`}
 
-            {`(Note:if you didn't find your desire place you can zoom in or zoom out for clear view)`}
+            <div className="font-bold">
+              {" "}
+              {`(Note:if you didn't find your desire place you can zoom in or zoom out for clear view)`}
+            </div>
           </div>
-          <iframe src={source}></iframe>
+          <iframe
+            className="mx-auto mt-4 "
+            width="600"
+            height="400"
+            id="gmap_canvas"
+            src={`https://maps.google.com/maps?q=${countryData.name}&t=&z=6&ie=UTF8&iwloc=&output=embed`}
+            frameborder="0"
+            scrolling="no"
+            marginheight="0"
+            marginwidth="0"
+          ></iframe>
         </div>
       </div>
     </div>

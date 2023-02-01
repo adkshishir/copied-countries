@@ -17,15 +17,15 @@ const NavBar = () => {
       //   height: "fit-content",
       //   backgroundColor: " white",
       // }}
-      className="Nav"
+      className=" flex justify-between mb-4 px-5 py-3 shadow-lg font-medium text-lg"
     >
-      <nav className="Left-nav">
+      <nav>
         Where in the World?
         {/* <a href="#item1">item1</a>
         <a href="#item78">item78</a> <a href="#item100">item100</a>
         <a href="#item201">item201</a> <a href="#item32">item332</a> */}
       </nav>
-      <nav className="right-nav">icon Dark Mode</nav>
+      <nav className="">icon Dark Mode</nav>
     </nav>
   );
 };
