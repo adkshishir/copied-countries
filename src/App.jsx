@@ -15,6 +15,8 @@ function App() {
   const [values, setvalues] = useState("");
   const [countryName, setCountryName] = useState("");
 
+  const [region, setRegion] = useState();
+
   const makingInActive = (countryN) => {
     setActive(false);
     // console.log(countryN.name);
@@ -80,10 +82,14 @@ function App() {
     findCountries();
     // setCollect(countriesData);
   }, [values]);
-  // useEffect(() => {
-
-  //   setCollect(countriesData);
-  // }, [API_ALL_COUNTRIES]);
+  useEffect(() => {
+    SET_API_ALL_COUNTRIES(
+      `https://restcountries.com/v3.1/region/${onSetValues}`
+    );
+  }, [onSetValues]);
+  function onSetValues(region) {
+    return region;
+  }
 
   return (
     <div className="">
