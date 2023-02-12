@@ -82,11 +82,11 @@ function App() {
     findCountries();
     // setCollect(countriesData);
   }, [values]);
-  useEffect(() => {
-    SET_API_ALL_COUNTRIES(
-      `https://restcountries.com/v3.1/region/${onSetValues}`
-    );
-  }, [onSetValues]);
+  // useEffect(() => {
+  //   SET_API_ALL_COUNTRIES(
+  //     `https://restcountries.com/v3.1/region/${onSetValues}`
+  //   );
+  // }, [onSetValues]);
   function onSetValues(region) {
     return region;
   }
